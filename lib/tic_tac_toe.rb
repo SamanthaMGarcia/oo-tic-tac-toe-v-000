@@ -91,19 +91,19 @@ def over?
   won? || draw? || full?
 end
 
-def winner(board)
-  if win_combo = won?(board)
-    board[win_combo.first]
+def winner
+  if win_combo = won?
+    @board[win_combo.first]
   end
 end
 
-def play(board)
-  while !over?(board)
-    turn(board)
+def play
+  while !over?
+    turn
   end
-  if won?(board)
-    puts "Congratulations #{winner(board)}!"
-  elsif draw?(board)
+  if won?
+    puts "Congratulations #{winner}!"
+  elsif draw?
     puts "Cat's Game!"
   end
 end
