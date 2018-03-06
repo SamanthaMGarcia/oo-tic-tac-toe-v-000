@@ -91,9 +91,9 @@ def over?
   won? || draw? || full?
 end
 
-def winner
-  if win_combo = won?
-    @board[win_combo.first]
+def winner(board)
+  if win_combo = won?(board)
+    board[win_combo.first]
   end
 end
 
